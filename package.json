@@ -1,0 +1,21 @@
+{
+  "name": "trialnode",
+  "version": "1.0.0",
+  "description": "Trial for all the things node",
+  "main": "index.js",
+  "type": "commonjs",
+  "gypfile":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"node-gyp rebuild",
+    "clean":"node-gyp clean"
+  },
+  "author": "Amey the noob",
+  "license": "ISC",
+  "devDependencies": {
+    "node-gyp": "^8.3.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^4.2.0"
+  }
+}
