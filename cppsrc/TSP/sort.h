@@ -1,9 +1,4 @@
-/*
- * sort.h
- *   created on: April 24, 2013
- * last updated: May 10, 2020
- *       author: Shujia Liu
- */
+
 
 #ifndef __SORT__
 #define __SORT__
@@ -18,21 +13,22 @@ using namespace std;
 
 void InitSort();
 void swap(int &x, int &y);
-void selectionSort(vector<int>& Arg, int l, int r);
-int partition(vector<int>& Arg, int l, int r); // partition for quick sort
-void quickSort(vector<int>& Arg, int l, int r);
+void selectionSort(vector<int> &Arg, int l, int r);
+int partition(vector<int> &Arg, int l, int r); // partition for quick sort
+void quickSort(vector<int> &Arg, int l, int r);
 
-class TSort{
+class TSort
+{
 public:
 	TSort();
 	~TSort();
-	void index(vector<double>& Arg, int numOfArg, vector<int>& indexOrderd, int numOfOrd);
-	void index(vector<int>& Arg, int numOfArg, vector<int>& indexOrderd, int numOfOrd);
-	void indexB(vector<double>& Arg, int numOfArg, vector<int>& indexOrderd, int numOfOrd);
-	void indexB(vector<int>& Arg, int numOfArg, vector<int>& indexOrderd, int numOfOrd);
-	void sort(vector<int>& Arg, int numOfArg);
+	void index(vector<double> &Arg, int numOfArg, vector<int> &indexOrderd, int numOfOrd);
+	void index(vector<int> &Arg, int numOfArg, vector<int> &indexOrderd, int numOfOrd);
+	void indexB(vector<double> &Arg, int numOfArg, vector<int> &indexOrderd, int numOfOrd);
+	void indexB(vector<int> &Arg, int numOfArg, vector<int> &indexOrderd, int numOfOrd);
+	void sort(vector<int> &Arg, int numOfArg);
 };
 
-extern TSort* tSort;
+extern TSort *tSort;
 
 #endif

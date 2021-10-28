@@ -1,9 +1,4 @@
-/*
- * kopt.h
- *   created on: April 24, 2013
- * last updated: May 10, 2020
- *       author: Shujia Liu
- */
+
 
 #ifndef __KOPT__
 #define __KOPT__
@@ -28,29 +23,30 @@
 #include <stdlib.h>
 #include <assert.h>
 
-class TKopt{
+class TKopt
+{
 public:
-	TKopt( int N );
+	TKopt(int N);
 	~TKopt();
 	void setInvNearList();
-	void transIndiToTree( TIndi& indi );
-	void transTreeToIndi( TIndi& indi );
-	void doIt( TIndi& tIndi );
+	void transIndiToTree(TIndi &indi);
+	void transTreeToIndi(TIndi &indi);
+	void doIt(TIndi &tIndi);
 
-	int getNext( int t );
-	int getPrev( int t );
-	int turn( int &orient );
+	int getNext(int t);
+	int getPrev(int t);
+	int turn(int &orient);
 
 	void sub();
-	void incrementImp( int flagRev );
-	void combineSeg( int segL, int segS );
+	void incrementImp(int flagRev);
+	void combineSeg(int segL, int segS);
 
 	void checkDetail();
 	void checkValid();
 	void swap(int &x, int &y);
-	void makeRandSol( TIndi& indi );
+	void makeRandSol(TIndi &indi);
 
-	TEvaluator* eval;
+	TEvaluator *eval;
 
 private:
 	int fN;

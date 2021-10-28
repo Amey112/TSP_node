@@ -1,9 +1,4 @@
-/*
- * cross.h
- *   created on: April 24, 2013
- * last updated: May 10, 2020
- *       author: Shujia Liu
- */
+
 
 #ifndef __Cross__
 #define __Cross__
@@ -29,35 +24,36 @@
 #include <stdlib.h>
 #include <vector>
 
-class TCross{
+class TCross
+{
 public:
-	TCross( int N );
+	TCross(int N);
 	~TCross();
-	void doIt( TIndi& tKid, TIndi& tPa2, int numOfKids, int flagP, int flagC[ 10 ], vector<vector<int>>& fEdgeFreq ); // EAX entry point
-	void setParents( const TIndi& tPa1, const TIndi& tPa2, int flagC[ 10 ], int numOfKids ); // sets parents
-	void setABcycle( const TIndi& parent1, const TIndi& parent2, int flagC[ 10 ], int numOfKids ); // sets ab cycle
+	void doIt(TIndi &tKid, TIndi &tPa2, int numOfKids, int flagP, int flagC[10], vector<vector<int>> &fEdgeFreq); // EAX entry point
+	void setParents(const TIndi &tPa1, const TIndi &tPa2, int flagC[10], int numOfKids);						  // sets parents
+	void setABcycle(const TIndi &parent1, const TIndi &parent2, int flagC[10], int numOfKids);					  // sets ab cycle
 
 	void swap(int &x, int &y);
-	void formABcycle(); // saves ab cycle
-	void changeSol( TIndi& tKid, int ABnum, int type ); // generates intermediate solution from ab cycle
+	void formABcycle();								  // saves ab cycle
+	void changeSol(TIndi &tKid, int ABnum, int type); // generates intermediate solution from ab cycle
 
-	void makeCompleteSol( TIndi& tKid ); // the 5th step of EAX
-	void makeUnit(); // the 5-1th step of EAX
-	void backToPa1( TIndi& tKid ); // rolls back p_a
-	void goToBest( TIndi& tKid ); // sets tKid to the best solutions of child generation
+	void makeCompleteSol(TIndi &tKid); // the 5th step of EAX
+	void makeUnit();				   // the 5-1th step of EAX
+	void backToPa1(TIndi &tKid);	   // rolls back p_a
+	void goToBest(TIndi &tKid);		   // sets tKid to the best solutions of child generation
 
-	void incrementEdgeFreq(vector<vector<int>>& fEdgeFreq); // increates fEdgeFreq[][]
-	int calAdpLoss(vector<vector<int>>& fEdgeFreq); // calculates the average road distance from fEdgeFreq[][]
-	double calEntLoss(vector<vector<int>>& fEdgeFreq); // calculates the difference of edge entropy from fEdgeFreq[][]
+	void incrementEdgeFreq(vector<vector<int>> &fEdgeFreq); // increates fEdgeFreq[][]
+	int calAdpLoss(vector<vector<int>> &fEdgeFreq);			// calculates the average road distance from fEdgeFreq[][]
+	double calEntLoss(vector<vector<int>> &fEdgeFreq);		// calculates the difference of edge entropy from fEdgeFreq[][]
 
-	void setWeight( const TIndi& parent1, const TIndi& parent2 );	// Block2
-	int	calCNaive();
-	void searchEset( int num );
-	void addAB( int num );
-	void deleteAB( int num );
+	void setWeight(const TIndi &parent1, const TIndi &parent2); // Block2
+	int calCNaive();
+	void searchEset(int num);
+	void addAB(int num);
+	void deleteAB(int num);
 
 	int fNumOfGeneratedCh;
-	TEvaluator* eval;
+	TEvaluator *eval;
 	int Npop;
 
 private:
